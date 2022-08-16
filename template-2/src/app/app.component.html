@@ -1,0 +1,8 @@
+<h1>Practice Auth Guard</h1>
+<a class="nav-link" routerLink="/">Home</a>
+<a *ngIf="this.userLoggedIn" class="nav-link" routerLink="/about">About</a>
+<a *ngIf="!this.userLoggedIn" class="nav-link" routerLink="/login">Login</a>
+<a *ngIf="!this.userLoggedIn" class="nav-link" routerLink="/register">Register</a>
+<button *ngIf="this.userLoggedIn" class="nav-btn" (click)="logoutOnClick()">Logout</button>
+<hr color="blue">
+<router-outlet></router-outlet>

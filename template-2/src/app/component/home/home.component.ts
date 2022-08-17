@@ -52,9 +52,15 @@ export class HomeComponent implements OnInit {
   }
 
   jwtDecryptionTest(): void {
+    // const token = 'dfhsjufgwu7ctr64875trb38465r87v34658736b85638756v3b875b978b783.cr354uby7856v738c6q5r487c647865.c4b786b827q82628';
     const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJzYXlhbkBnbWFpbC5jb20iLCJzdWIiOiJzYXlhbkA5MTYzNjgxNjcyIiwiZXhwIjoxNjYwNjgwNzU0LCJpYXQiOjE2NjA2ODAxNTR9.01SKCHr8_dmRerzs0P4UIFfWBci8wwP-Di7EfNStd34';
-    const userDetails = this.jwtHelperService.decodeToken(token);
-    console.log(userDetails);
+    try {
+      const userDetails = this.jwtHelperService.decodeToken(token);
+      console.log(userDetails);
+    } catch (error) {
+      console.log('Token is not valid');
+      // console.log('error is:', error);
+    }
   }
 
 }
